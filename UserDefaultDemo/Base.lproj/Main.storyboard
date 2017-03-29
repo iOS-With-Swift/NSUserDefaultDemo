@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UserDefaultDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,65 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8M-qv-TWT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="NSUserDefault demo" id="qzh-LT-aDY"/>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-wZ-Ie2">
+                                <rect key="frame" x="78" y="91" width="218" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLM-gD-r6p">
+                                <rect key="frame" x="170" y="129" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="btnSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QR9-Z5-TIQ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Tg-3d-bKe">
+                                <rect key="frame" x="78" y="196" width="218" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT2-9A-wmt">
+                                <rect key="frame" x="168" y="234" width="38" height="30"/>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="btnShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EO7-Hu-z6R"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tg-3d-bKe" firstAttribute="top" secondItem="GLM-gD-r6p" secondAttribute="bottom" constant="37" id="6An-at-J6U"/>
+                            <constraint firstItem="vGd-wZ-Ie2" firstAttribute="trailing" secondItem="6Tg-3d-bKe" secondAttribute="trailing" id="AOb-Gg-nka"/>
+                            <constraint firstItem="u8M-qv-TWT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CaK-22-ewb"/>
+                            <constraint firstItem="6Tg-3d-bKe" firstAttribute="centerX" secondItem="dT2-9A-wmt" secondAttribute="centerX" id="KyS-cm-wzG"/>
+                            <constraint firstItem="vGd-wZ-Ie2" firstAttribute="leading" secondItem="6Tg-3d-bKe" secondAttribute="leading" id="LR2-yY-FRI"/>
+                            <constraint firstItem="u8M-qv-TWT" firstAttribute="centerX" secondItem="vGd-wZ-Ie2" secondAttribute="centerX" id="OjH-hv-sV9"/>
+                            <constraint firstItem="dT2-9A-wmt" firstAttribute="top" secondItem="6Tg-3d-bKe" secondAttribute="bottom" constant="8" symbolic="YES" id="Xno-JY-pDD"/>
+                            <constraint firstAttribute="trailing" secondItem="u8M-qv-TWT" secondAttribute="trailing" id="ZWK-lA-hiC"/>
+                            <constraint firstItem="u8M-qv-TWT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hV1-Bx-pt2"/>
+                            <constraint firstItem="vGd-wZ-Ie2" firstAttribute="top" secondItem="u8M-qv-TWT" secondAttribute="bottom" constant="27" id="sCm-Nd-UeH"/>
+                            <constraint firstItem="vGd-wZ-Ie2" firstAttribute="centerX" secondItem="GLM-gD-r6p" secondAttribute="centerX" id="syJ-0q-WbP"/>
+                            <constraint firstItem="GLM-gD-r6p" firstAttribute="top" secondItem="vGd-wZ-Ie2" secondAttribute="bottom" constant="8" symbolic="YES" id="v6J-6Y-PvN"/>
+                            <constraint firstItem="vGd-wZ-Ie2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="62" id="z82-oB-Itp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtSave" destination="vGd-wZ-Ie2" id="Acd-yS-LpY"/>
+                        <outlet property="txtShow" destination="6Tg-3d-bKe" id="Gad-xt-Edq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
